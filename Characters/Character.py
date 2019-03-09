@@ -22,3 +22,37 @@ class Character:
         # wipe out unused movement
         self.movement = 0
         print("End turn")
+
+    # movement
+    def move_right(self, amount):
+        if self.movement >= amount:
+            self.movement -= amount
+            self.position[1] += amount
+        else:
+            print("not enough moves")
+            return
+        print("moving right")
+    def move_left(self, amount):
+        if self.movement >= amount:
+            self.movement -= amount
+            self.position[1] -= amount
+        else:
+            print("not enough moves")
+            return
+        print("moving left")
+    def move_up(self, amount):
+        if self.movement >= amount:
+            self.movement -= amount
+            self.position[0] -= amount
+        else:
+            print("not enough moves")
+            return
+        print("moving up")
+    def move_down(self, amount):
+        if self.movement >= amount:
+            self.movement -= amount
+            self.position[0] += amount
+        else:
+            print("not enough moves")
+            return
+        print("moving down")
