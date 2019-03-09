@@ -26,32 +26,44 @@ class Character:
     # movement
     def move_right(self, amount):
         if self.movement >= amount:
+            old_position = self.position.copy()
             self.movement -= amount
             self.position[1] += amount
+            new_position = self.position
+            self.board.update_position(old_position, new_position, self)
         else:
             print("not enough moves")
             return
         print("moving right")
     def move_left(self, amount):
         if self.movement >= amount:
+            old_position = self.position.copy()
             self.movement -= amount
             self.position[1] -= amount
+            new_position = self.position
+            self.board.update_position(old_position, new_position, self)
         else:
             print("not enough moves")
             return
         print("moving left")
     def move_up(self, amount):
         if self.movement >= amount:
+            old_position = self.position.copy()
             self.movement -= amount
             self.position[0] -= amount
+            new_position = self.position
+            self.board.update_position(old_position, new_position, self)
         else:
             print("not enough moves")
             return
         print("moving up")
     def move_down(self, amount):
         if self.movement >= amount:
+            old_position = self.position.copy()
             self.movement -= amount
             self.position[0] += amount
+            new_position = self.position
+            self.board.update_position(old_position, new_position, self)
         else:
             print("not enough moves")
             return
