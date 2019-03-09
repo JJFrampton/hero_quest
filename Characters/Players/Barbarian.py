@@ -1,3 +1,4 @@
+from Characters.Players.Player import Player
 class Barbarian(Player):
     def __init__(self, name):
         self.stats_attack = 3

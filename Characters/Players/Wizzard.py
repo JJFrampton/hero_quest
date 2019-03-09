@@ -1,3 +1,5 @@
+from Characters.Players.Player import Player
+# from Dir.Dir.File import <class in file>
 class Wizzard(Player):
     def __init__(self, name):
         self.stats_attack = 1
