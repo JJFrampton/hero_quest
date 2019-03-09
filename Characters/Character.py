@@ -1,6 +1,7 @@
 from Actions.Dice import Dice
 class Character:
-    def __init__(self):
+    d = Dice()
+    def __init__(self, position):
         print("initializing")
     def attack(self):
         print("attacking")
@@ -8,6 +9,16 @@ class Character:
         print("defending")
         # this should be automatic response to being attacked
     def attack(self):
-        return Dice.roll('w', self.stats_attack)
+        return self.d.roll('w', self.stats_attack)
     def defend(self):
-        return Dice.roll('w', self.stats_defend)
+        return self.d.roll('w', self.stats_defend)
+    def turn_start(self):
+        # set booleans
+        self.movement = 0
+        self.moved = False
+        self.actioned = False
+        print("Start turn")
+    def turn_end(self):
+        # wipe out unused movement
+        self.movement = 0
+        print("End turn")
