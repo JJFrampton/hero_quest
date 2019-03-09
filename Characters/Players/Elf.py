@@ -1,5 +1,5 @@
 from Characters.Players.Player import Player
-class elf(Player):
+class Elf(Player):
     def __init__(self, name):
         self.stats_attack = 2
         self.stats_defend = 2
