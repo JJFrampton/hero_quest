@@ -4,7 +4,7 @@ from Characters.Players.Elf import Elf
 from Resources.Board import Board
 
 
-class TestElf(unittest.TestCase):
+class TestInit(unittest.TestCase):
     def setUp(self):
         board = Board(4,4)
         self.elf = Elf("Mr. Anderson", [0,0], board)
@@ -19,6 +19,13 @@ class TestElf(unittest.TestCase):
         self.assertEqual(self.elf.position, [0,0])
     def test_init_board_position(self):
         self.assertEqual(self.elf.board.map[self.elf.position[0]][self.elf.position[1]], self.elf.tag)
+
+class TestAction(unittest.TestCase):
+    def setUp(self):
+        board = Board(4,4)
+        self.elf = Elf("Mr. Anderson", [0,0], board)
+    def tearDown(self):
+        del self.elf
     # action
     def test_action_turn_start(self):
         self.elf.turn_start()
@@ -29,7 +36,6 @@ class TestElf(unittest.TestCase):
         self.elf.move_right(1)
         self.assertEqual(self.elf.board.map[old_position[0]][old_position[1]], 'o')
         self.assertEqual(self.elf.board.map[self.elf.position[0]][self.elf.position[1]], self.elf.tag)
-
 
 if __name__ == '__main__':
     unittest.main()
