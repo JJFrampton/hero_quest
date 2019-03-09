@@ -2,7 +2,7 @@ import numpy as np
 def p(m):
     print(np.matrix(m.map))
 
-from resources.Board import Board
+from Resources.Board import Board
 b = Board(4,4)
 from Characters.Players.Elf import Elf
 p1 = Elf("yoshi", [0,0], b)
