@@ -33,7 +33,7 @@ class Character:
         if self.movement >= amount:
             new_position = self.position.copy()
             new_position[1] += amount
-            moved = self.board.update_position(self.position, amount, 'right' self)
+            moved = self.board.update_position(self, amount, 'right')
             if moved:
                 self.position = new_position
                 self.movement -= amount

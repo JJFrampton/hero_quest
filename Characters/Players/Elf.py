@@ -12,7 +12,8 @@ class Elf(Player):
         self.tag = name[:1]
         self.position = position
         self.board = board
-        self.board.update_position(position, position, self)
+        self.board.init_position(self)
+        # self.board.update_position(self, 0, 'right')
         # board.update_position(position, [1,2], self)
         print("initialized")
 
