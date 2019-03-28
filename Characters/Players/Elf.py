@@ -1,4 +1,4 @@
-from Characters.Players.Player import Player
+from characters.players.player import Player
 class Elf(Player):
     def __init__(self, name, position, board):
         self.stats_attack = 2
@@ -9,7 +9,7 @@ class Elf(Player):
         self.stats_weapon = "shortsword"
         self.stats_armour = None
         self.stats_name = name
-        self.tag = name[:1]
+        self.display = name[:1]
         self.position = position
         self.board = board
         self.board.init_position(self)

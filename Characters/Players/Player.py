@@ -1,4 +1,4 @@
-from Characters.Character import Character
+from characters.character import Character
 class Player(Character):
     def movement_roll(self):
         Character.moved = True
