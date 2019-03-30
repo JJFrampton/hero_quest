@@ -1,4 +1,4 @@
-from Actions.Dice import Dice
+from actions.dice import Dice
 class Character:
     d = Dice()
     def __init__(self, position):
